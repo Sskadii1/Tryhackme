@@ -1,5 +1,5 @@
 **Defensive Security Intro**
-Trong phòng trước, chúng ta đã tìm hiểu về bảo mật tấn công , nhằm mục đích xác định và khai thác các lỗ hổng hệ thống để tăng cường các biện pháp bảo mật. Điều này bao gồm khai thác lỗi phần mềm, tận dụng các thiết lập không an toàn và tận dụng các chính sách kiểm soát truy cập không được thực thi, cùng với các chiến lược khác. Các nhóm đỏ và người kiểm tra thâm nhập chuyên về các kỹ thuật tấn công này.
+Để tìm hiểu về bảo mật tấn công , nhằm mục đích xác định và khai thác các lỗ hổng hệ thống để tăng cường các biện pháp bảo mật. Điều này bao gồm khai thác lỗi phần mềm, tận dụng các thiết lập không an toàn và tận dụng các chính sách kiểm soát truy cập không được thực thi, cùng với các chiến lược khác. Các nhóm đỏ và người kiểm tra thâm nhập chuyên về các kỹ thuật tấn công này.
   
 Một số nhiệm vụ liên quan đến an ninh phòng thủ bao gồm:
 
