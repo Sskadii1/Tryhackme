@@ -1,2 +1,3 @@
 # Tryhackme
-what i learned from tryhackme
+
+Những gì tôi đã học từ tryhackme(SOC ANALYST).
