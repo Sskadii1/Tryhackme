@@ -16,7 +16,7 @@ Những cảnh báo True Positives này đôi khi được gọi là Sự cố(I
 
 **Types of Incidents**
 
-Những ca incidents có thể xảy ra bởi hoạt động có hại liên quan đến thế giới kỹ thuật số. Chúng ta có thể phân loại chúng thành 5 loại, như sau:
+Những ca incidents có thể xảy ra bởi hoạt động có hại liên quan đến thế giới kỹ thuật số. Chúng ta có thể phân loại chúng thành 5 loại, như sau
 
     Malware Infections:  Phần mềm độc hại là chương trình độc hại có thể gây hại cho hệ thống, mạng hoặc ứng dụng. Phần lớn các sự cố liên quan đến nhiễm phần mềm độc hại.  Có nhiều loại phần mềm độc hại khác nhau, mỗi loại có khả năng gây thiệt hại riêng. Nhiễm phần mềm độc hại chủ yếu do các tệp có thể là văn bản, tài liệu, tệp thực thi, v.v.
     
@@ -39,7 +39,7 @@ Tất cả các sự cố này đều có khả năng tác động tiêu cực �
  SANS: Tên gọi của kế hoạch này là **PICERL**, nó bao gồm Preparation, Identification, Containment, Eradication, Recovery, Lessons Learned.
 
     Preparation: 
-      Đây là giai đoạn đầu tiên. Giai đoạn chuẩn bị bao gồm xây dựng các nguồn lực cần     thiết để xử lý sự cố. 
+    Đây là giai đoạn đầu tiên. Giai đoạn chuẩn bị bao gồm xây dựng các nguồn lực cần thiết để xử lý sự cố. 
       
     Identification:
     Giai đoạn nhận dạng đề cập đến việc tìm kiếm bất kỳ hành vi bất thường nào có thể chỉ ra sự cố. Điều này bao gồm việc sử dụng các giải pháp và kỹ thuật bảo mật khác nhau để theo dõi các sự kiện bất thường.
