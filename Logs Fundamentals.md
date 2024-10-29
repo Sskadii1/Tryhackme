@@ -40,8 +40,48 @@ Logs có thể có những dạng sau:
 
 **Có thể có nhiều loại nhật ký khác nhau tùy thuộc vào các ứng dụng và dịch vụ mà chúng cung cấp.*
 
-
-
 **Windows Event Logs Analysis**
 
+Giống như các hệ điều hành khác, Windows OS cũng ghi lại nhiều hoạt động diễn ra. 
+
+Chúng được lưu trữ trong các tệp nhật ký tách biệt, mỗi tệp có một danh mục nhật ký cụ thể. Một số loại nhật ký quan trọng được lưu trữ trong Hệ điều hành Windows là:
+
+Application: Bất kỳ thông tin nào liên quan đến các ứng dụng(application)đều được ghi vào tệp này. Thông tin này bao gồm lỗi, cảnh báo, sự cố tương thích, v.v.
+
+System: Bản thân hệ điều hành có các hoạt động chạy khác nhau. Bất kỳ thông tin nào liên quan đến các hoạt động này đều được ghi vào tệp nhật ký Hệ thống. Thông tin này bao gồm các sự cố trình điều khiển(driver issues), sự cố phần cứng(hardware issues), thông tin khởi động và tắt hệ thống(system startup/shutdown information), thông tin dịch vụ(services information), v.v.
+
+Security: là tệp nhật ký quan trọng nhất trong hệ điều hành Windows về mặt bảo mật. Tệp này ghi lại tất cả các hoạt động liên quan đến bảo mật, bao gồm xác thực người dùng, thay đổi trong tài khoản người dùng, thay đổi chính sách bảo mật, v.v.
+
+Bên cạnh đó, một số tệp nhật ký khác trong hệ điều hành Windows được thiết kế để ghi lại các hoạt động liên quan đến các hành động và ứng dụng cụ thể.
+
+Không giống như các tệp nhật ký khác được nghiên cứu trong các tác vụ trước, không có ứng dụng tích hợp nào để xem chúng, hệ điều hành Windows có một tiện ích được gọi là Event Viewer(eventvwr.msc), cung cấp giao diện người dùng đồ họa đẹp mắt để xem và tìm kiếm bất kỳ nội dung nào trong các nhật ký này.
+
+4624	A user account successfully logged in
+4625	A user account failed to login
+4634	A user account successfully logged off
+4720	A user account was created
+4724	An attempt was made to reset an account’s password
+4722	A user account was enabled
+4725	A user account was disabled
+4726	A user account was deleted
+
 **Web Server Access Logs Analysis**
+
+Chúng ta tương tác với nhiều trang web hàng ngày. Đôi khi, chúng ta chỉ muốn xem trang web, và đôi khi, chúng ta muốn đăng nhập hoặc tải tệp lên bất kỳ trường nhập liệu nào có sẵn. Tất cả các yêu cầu này đều được trang web ghi lại và lưu trữ trong tệp nhật ký trên máy chủ web đang chạy trang web đó.
+
+Ví dụ như tệp nhật ký này chứa tất cả các yêu cầu được thực hiện đối với trang web cùng với thông tin về khung thời gian, IP được yêu cầu, loại yêu cầu và URL. Sau đây là các trường được lấy từ một bản ghi mẫu từ tệp nhật ký truy cập máy chủ web Apache có thể được tìm thấy trong thư mục:
+
+**/var/log/apache2/access.log**
+
+Trong này sẽ có IP address, Timestamp, Request(http method, url), status code, và User-agent.
+
+Hầu hết các hệ thống đều xoay vòng nhật ký thường xuyên. Việc xoay vòng này giúp chúng tạo các tệp nhật ký riêng lẻ cho các khung thời gian cụ thể và không mang tất cả chúng trong một tệp nhật ký duy nhất. Nhưng đôi khi, chúng ta có thể cần kết hợp hai tệp nhật ký. Tiện ích dòng lệnh cat cũng có thể hữu ích trong trường hợp này.
+
+vd : **cat access1.log access2.log > combined_access.log**
+
+Ngoài ra, còn | Grep, less, có thể giúp truy vấn dữ liệu từ log hiệu quả hơn.
+
+
+
+
+
