@@ -84,7 +84,23 @@ Action: Phần này xác định hành động sẽ được thực hiện khi x
 
 Direction: Trường này xác định khả năng áp dụng của quy tắc đối với lưu lượng truy cập đến hoặc đi.
 
+Riêng với action, chúng ta sẽ có các loại hành động, để tạo lên 1 rule.
 
+**Types of Actions*
+
+Allow: cho biết lưu lượng truy cập cụ thể được xác định bên trong quy tắc sẽ được phép.
+Deny:  của quy tắc có nghĩa là lưu lượng được xác định bên trong quy tắc sẽ bị chặn và không được phép. Các quy tắc này là cơ bản để nhóm bảo mật từ chối lưu lượng cụ thể đến từ các địa chỉ IP độc hại và tạo thêm các quy tắc để giảm bề mặt đe dọa của mạng.
+Forward:  chuyển hướng lưu lượng đến một phân đoạn mạng khác bằng cách sử dụng các quy tắc chuyển tiếp được tạo trên tường lửa. Điều này áp dụng cho tường lửa cung cấp chức năng định tuyến(routing) và hoạt động như cổng giữa các phân đoạn mạng khác nhau.
+
+**Directionality of Rules*
+
+Tường lửa có nhiều loại quy tắc khác nhau, mỗi loại được phân loại dựa trên hướng lưu lượng mà các quy tắc được tạo ra.
+
+Inbound Rules:Quy tắc được gọi là quy tắc inbound khi chúng chỉ được áp dụng cho lưu lượng truy cập đến. Ví dự như bạn chấp nhận toàn bộ lưu lượng từ port 80(http) cho cái webserver của bạn.
+
+Outbound Rules: Các quy tắc này chỉ được tạo cho lưu lượng truy cập đi. Kiểu như, bạn chặn tất cả truy cập SMTP(port 25) ngoại trừ thiết bị máy chủ thư
+
+Forward Rules:Quy tắc chuyển tiếp được tạo ra để chuyển tiếp lưu lượng cụ thể bên trong mạng. Ví dụ, chuyển tiếp lưu lượng HTTP port 80 đến máy chủ web server trong mạng của bạn
 
 **Windows Defender Firewall**
 
