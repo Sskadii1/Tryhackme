@@ -44,4 +44,30 @@ Packet logging mode: Snort ghi lại lưu lượng mạng dưới dạng file PC
 
 Network Intrusion Detection System mode: Đây là chế độ chính của Snort, giám sát lưu lượng mạng theo thời gian thực và sử dụng các quy tắc để phát hiện các mẫu tấn công đã biết. Chế độ NIDS giúp đội ngũ bảo mật phát hiện mối đe dọa tiềm ẩn.
 
-Việc sử dụng Snort như một IDS có liên quan nhất đến chế độ NIDS của nó . Tuy nhiên, Snort có thể được sử dụng ở bất kỳ chế độ nào ở trên tùy thuộc vào yêu cầu.
+Việc sử dụng Snort như một IDS có liên quan nhất đến chế độ NIDS của nó .Tuy nhiên, Snort có thể được sử dụng ở bất kỳ chế độ nào ở trên tùy thuộc vào yêu cầu.
+
+*Rule Format của snort**
+
+![image](https://github.com/user-attachments/assets/f6d165c5-73da-46d1-8fd2-e82871daa496)
+
+Action: Điều này chỉ định hành động nào cần thực hiện khi quy tắc kích hoạt. Trong trường hợp này, chúng ta có hành động "cảnh báo" khi lưu lượng truy cập khớp với quy tắc này.
+
+Protocol: Điều này đề cập đến giao thức phù hợp với quy tắc này. Trong trường hợp này, chúng tôi sử dụng giao thức "ICMP", được sử dụng khi chúng tôi ping một máy chủ.
+
+Source IP:  Xác định IP mà lưu lượng truy cập bắt nguồn. Vì chúng tôi muốn phát hiện lưu lượng truy cập từ bất kỳ IP nguồn nào, chúng tôi đặt thành "bất kỳ".
+
+Source port: Xác định cổng mà lưu lượng truy cập bắt nguồn. Vì chúng tôi muốn phát hiện lưu lượng truy cập từ bất kỳ cổng nguồn nào, chúng tôi đặt cổng này là "bất kỳ".
+
+Destination IP: Điều này chỉ định IP đích mà lưu lượng truy cập khớp sẽ đến; nó tạo ra cảnh báo. Trong trường hợp này, chúng tôi sử dụng "$HOME_NET". Đây là một biến và chúng tôi định nghĩa giá trị của nó là phạm vi toàn bộ mạng của chúng tôi trong tệp cấu hình của Snort.
+
+Destination port: Chỉ định cổng mà lưu lượng sẽ đến. Vì chúng tôi muốn phát hiện lưu lượng đến bất kỳ cổng nào, chúng tôi đặt là "bất kỳ".
+
+Rule metadata: 
+
+Mỗi quy tắc đều có một số siêu dữ liệu. Siêu dữ liệu này được định nghĩa ở cuối quy tắc trong dấu ngoặc đơn. Sau đây là các thành phần của nó:
+
+Message (msg): Phần này mô tả tin nhắn sẽ được hiển thị khi quy tắc chủ thể kích hoạt. Tin nhắn phải chỉ ra loại hoạt động được phát hiện. Trong trường hợp này, chúng tôi đã sử dụng "Ping Detected".
+
+Signature ID (sid): Mỗi quy tắc có một mã định danh duy nhất để phân biệt với các quy tắc khác. Mã định danh này được gọi là ID chữ ký (sid). Trong trường hợp này, chúng tôi đặt sid thành "10001".
+
+Rule revision (rev): Thiết lập số sửa đổi của quy tắc. Mỗi lần quy tắc được sửa đổi, số sửa đổi của quy tắc sẽ tăng lên. Điều này giúp theo dõi các thay đổi đối với bất kỳ quy tắc nào.
